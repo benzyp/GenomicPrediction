@@ -7,6 +7,8 @@ C:\Users\Benzy\source\repos\GenomicPrediction\GenomicPrediction\env\Scripts>Coll
 
 C:\Users\Benzy\source\repos\GenomicPrediction\GenomicPrediction\env\Scripts>python ..\..\manage.py shell
 
+C:\Users\Benzy\source\repos\GenomicPrediction\GenomicPrediction\env\Scripts>python pip3.6.exe install psycopg2
+
 admin / password / 041b8e8f08b8308135b039c9d0e38285d20cf75e
 
 Authorization: Token 041b8e8f08b8308135b039c9d0e38285d20cf75e
