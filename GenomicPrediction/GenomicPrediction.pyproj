@@ -32,18 +32,6 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="api\serializers.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="api\test_api.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="api\views.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="api\__init__.py">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="app\api_views.py">
       <SubType>Code</SubType>
     </Compile>
@@ -63,7 +51,6 @@
     <Compile Include="GenomicPrediction\wsgi.py" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="api\" />
     <Folder Include="app\" />
     <Folder Include="app\migrations\" />
     <Folder Include="app\static\" />
