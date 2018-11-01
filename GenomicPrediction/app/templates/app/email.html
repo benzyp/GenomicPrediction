@@ -1,0 +1,25 @@
+
+<table>
+    <tr>
+        <td>
+        <b>Patient Info:</b><br/>
+        {{ patient.first_name }} {{ patient.last_name }}<br />
+        {{ patient.email }}<br />
+        {{ patient.phone }}<br /><br />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <b>Embryos:</b>          
+            <table>
+                <thead><tr style="background-color:lightgrey"><td>Code Name</td><td>Karyotype</td><td>Sex</td><td>Downs</td></tr></thead>
+                <tbody>
+            {% for embryo in embryos %}
+            <tr><td>{{ embryo.code_name }}</td><td>{{ embryo.karyotype }}</td><td>{{ embryo.embryo_sex }}</td><td>{{ embryo.embryo_downs }}</td></tr>
+            {% endfor %}
+                </tbody>
+            </table>
+        </td>
+    </tr>
+</table>
+
