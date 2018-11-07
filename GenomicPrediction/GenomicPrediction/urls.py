@@ -35,10 +35,11 @@ urlpatterns = [
     path('patient/', api_views.patient_list),
     path('patient/<int:pk>/', api_views.patient_detail),
 
+    #path('login/', views.login, name='login'),
     path('api-token-auth/', authviews.obtain_auth_token),
     path('mailreport/<int:pk>/', api_views.mail_report),
     url(r'^', include(router.urls)),
-    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+
+    path('django-rq/', include('django_rq.urls'))
 ]
-
-
