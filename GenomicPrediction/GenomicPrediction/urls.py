@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from app import views, api_views
+from app import api_views
 from rest_framework.authtoken import views as authviews
 
 #api urls
@@ -35,11 +35,6 @@ urlpatterns = [
     path('patient/', api_views.patient_list),
     path('patient/<int:pk>/', api_views.patient_detail),
 
-    path('', views.home, name='home'),
-    path('about', views.about, name='about'),
-    path('contact', views.contact, name='contact'),
-
-    path('login/', views.login, name='login'),
     path('api-token-auth/', authviews.obtain_auth_token),
     path('mailreport/<int:pk>/', api_views.mail_report),
     url(r'^', include(router.urls)),
