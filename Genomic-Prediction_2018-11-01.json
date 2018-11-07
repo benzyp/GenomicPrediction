@@ -1,0 +1,597 @@
+{
+	"_type": "export",
+	"__export_format": 3,
+	"__export_date": "2018-11-01T20:50:24.186Z",
+	"__export_source": "insomnia.desktop.app:v6.0.2",
+	"resources": [
+		{
+			"_id": "wrk_da8f7bc4ff2a4476a2f1eeaa59c43daa",
+			"created": 1541105334548,
+			"description": "",
+			"modified": 1541105334548,
+			"name": "Genomic Prediction",
+			"parentId": null,
+			"_type": "workspace"
+		},
+		{
+			"_id": "env_815f30fd67894621af262b908a114e7c",
+			"color": null,
+			"created": 1541105334570,
+			"data": {},
+			"isPrivate": false,
+			"metaSortKey": 1541105334570,
+			"modified": 1541105334570,
+			"name": "New Environment",
+			"parentId": "wrk_da8f7bc4ff2a4476a2f1eeaa59c43daa",
+			"_type": "environment"
+		},
+		{
+			"_id": "jar_a11724de0d68494fa8acca6333495fd4",
+			"cookies": [],
+			"created": 1541105334575,
+			"modified": 1541105334575,
+			"name": "Default Jar",
+			"parentId": "wrk_da8f7bc4ff2a4476a2f1eeaa59c43daa",
+			"_type": "cookie_jar"
+		},
+		{
+			"_id": "fld_f89814723f4a4564b8ddce69695cb54e",
+			"created": 1541105372662,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1532412882065,
+			"modified": 1541105372716,
+			"name": "GenomicPrediction",
+			"parentId": "wrk_da8f7bc4ff2a4476a2f1eeaa59c43daa",
+			"_type": "request_group"
+		},
+		{
+			"_id": "req_fb9cd4662de94b0c9f9f934f5d80b138",
+			"authentication": {},
+			"body": {
+				"mimeType": "multipart/form-data",
+				"params": [
+					{
+						"id": "pair_850bcee18adf45fd8ceeeb268d58191a",
+						"name": "username",
+						"value": "admin"
+					},
+					{
+						"id": "pair_cafe9da76e274bb78498e7c4ec31a05f",
+						"name": "password",
+						"value": "password"
+					}
+				]
+			},
+			"created": 1541105372666,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_447e54a196c945289b56b639c6e0c101",
+					"name": "Content-Type",
+					"value": "multipart/form-data"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540927383236,
+			"method": "POST",
+			"modified": 1541105372666,
+			"name": "Authenticate",
+			"parameters": [],
+			"parentId": "fld_f89814723f4a4564b8ddce69695cb54e",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:8000/api-token-auth/",
+			"_type": "request"
+		},
+		{
+			"_id": "req_7209b5900f1b4c60838d19393800652c",
+			"authentication": {
+				"prefix": "Token",
+				"token": "badb10dbf58631b27054febc09c957c959421123",
+				"type": "bearer"
+			},
+			"body": {
+				"mimeType": "application/x-www-form-urlencoded",
+				"params": [
+					{
+						"id": "pair_774774c5a15c4fcfa5340b0b13e12296",
+						"name": "code_name",
+						"value": "embryo_1"
+					},
+					{
+						"id": "pair_4d4e2e461a244e43b8b32c6fcfcfc4cf",
+						"name": "karyotype",
+						"value": "XX,46"
+					},
+					{
+						"id": "pair_07f8d3a608fe4094bc1d215781aac4c6",
+						"name": "patient",
+						"value": "1"
+					}
+				]
+			},
+			"created": 1541105372671,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_29ee418900fe4a54a00d4db5b4f75e79",
+					"name": "Content-Type",
+					"value": "application/x-www-form-urlencoded"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540995383643,
+			"method": "PUT",
+			"modified": 1541105372671,
+			"name": "Update Embryo",
+			"parameters": [],
+			"parentId": "fld_f89814723f4a4564b8ddce69695cb54e",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:8000/embryo/1/",
+			"_type": "request"
+		},
+		{
+			"_id": "req_6bb490daebf540a9bd6895b2e4c5decd",
+			"authentication": {
+				"prefix": "Token",
+				"token": "badb10dbf58631b27054febc09c957c959421123",
+				"type": "bearer"
+			},
+			"body": {
+				"mimeType": "application/x-www-form-urlencoded",
+				"params": [
+					{
+						"id": "pair_ee3670ff1644433986da518b92e72948",
+						"name": "",
+						"value": ""
+					}
+				]
+			},
+			"created": 1541105372675,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_39a6ebefb9cc46dbb9e10261b6946df8",
+					"name": "Content-Type",
+					"value": "application/x-www-form-urlencoded"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540995633211,
+			"method": "GET",
+			"modified": 1541105372675,
+			"name": "Get Embryo",
+			"parameters": [
+				{
+					"id": "pair_6cea5f37513a465398a13fc3fbb66482",
+					"name": "",
+					"value": ""
+				}
+			],
+			"parentId": "fld_f89814723f4a4564b8ddce69695cb54e",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:8000/embryo/1",
+			"_type": "request"
+		},
+		{
+			"_id": "req_72aef4ef8db743da95d1634ca6ced314",
+			"authentication": {
+				"prefix": "Token",
+				"token": "badb10dbf58631b27054febc09c957c959421123",
+				"type": "bearer"
+			},
+			"body": {},
+			"created": 1541105372679,
+			"description": "",
+			"headers": [],
+			"isPrivate": false,
+			"metaSortKey": -1540995979127,
+			"method": "GET",
+			"modified": 1541105372679,
+			"name": "Get Embryos",
+			"parameters": [],
+			"parentId": "fld_f89814723f4a4564b8ddce69695cb54e",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:8000/embryo",
+			"_type": "request"
+		},
+		{
+			"_id": "req_551eea46049d44198d9c346fafadb516",
+			"authentication": {
+				"prefix": "Token",
+				"token": "badb10dbf58631b27054febc09c957c959421123",
+				"type": "bearer"
+			},
+			"body": {
+				"mimeType": "multipart/form-data",
+				"params": []
+			},
+			"created": 1541105372683,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_3d6bf98b7cf543339fa8eea09edb8c6d",
+					"name": "Content-Type",
+					"value": "multipart/form-data"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1541000643744,
+			"method": "DELETE",
+			"modified": 1541105372683,
+			"name": "Delete Embryo",
+			"parameters": [],
+			"parentId": "fld_f89814723f4a4564b8ddce69695cb54e",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:8000/embryo/1",
+			"_type": "request"
+		},
+		{
+			"_id": "req_9d9ddc8e91504318b9f0b8abcc08cfb7",
+			"authentication": {
+				"prefix": "Token",
+				"token": "badb10dbf58631b27054febc09c957c959421123",
+				"type": "bearer"
+			},
+			"body": {
+				"mimeType": "multipart/form-data",
+				"params": [
+					{
+						"id": "pair_66ef2e12e2fd43888aa88c3c0c07e0ec",
+						"name": "code_name",
+						"value": "embryo_3"
+					},
+					{
+						"id": "pair_e8f2061db25743fcb2b6bf0d2cfd7c0f",
+						"name": "karyotype",
+						"value": "47,XY,+20"
+					},
+					{
+						"id": "pair_5330dcd2994a4ffbbfb5362de10d68b9",
+						"name": "patient",
+						"value": "2"
+					}
+				]
+			},
+			"created": 1541105372685,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_10e781d2fd2a4bbaba1844781eb82f3c",
+					"name": "Content-Type",
+					"value": "multipart/form-data"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1541000773822,
+			"method": "POST",
+			"modified": 1541105372685,
+			"name": "Create Embryo",
+			"parameters": [],
+			"parentId": "fld_f89814723f4a4564b8ddce69695cb54e",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:8000/embryo/",
+			"_type": "request"
+		},
+		{
+			"_id": "req_863f759b79964662afa4440c191938b3",
+			"authentication": {
+				"prefix": "Token",
+				"token": "badb10dbf58631b27054febc09c957c959421123",
+				"type": "bearer"
+			},
+			"body": {},
+			"created": 1541105372690,
+			"description": "",
+			"headers": [],
+			"isPrivate": false,
+			"metaSortKey": -1541006326322,
+			"method": "GET",
+			"modified": 1541105372690,
+			"name": "Mail Report",
+			"parameters": [],
+			"parentId": "fld_f89814723f4a4564b8ddce69695cb54e",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:8000/mailreport/2/",
+			"_type": "request"
+		},
+		{
+			"_id": "req_4c54c2320a774d62a90b35a959ac9eff",
+			"authentication": {
+				"prefix": "Token",
+				"token": "badb10dbf58631b27054febc09c957c959421123",
+				"type": "bearer"
+			},
+			"body": {
+				"mimeType": "multipart/form-data",
+				"params": [
+					{
+						"id": "pair_66ef2e12e2fd43888aa88c3c0c07e0ec",
+						"name": "first_name",
+						"value": "Monty"
+					},
+					{
+						"id": "pair_e8f2061db25743fcb2b6bf0d2cfd7c0f",
+						"name": "last_name",
+						"value": "Python"
+					},
+					{
+						"id": "pair_5330dcd2994a4ffbbfb5362de10d68b9",
+						"name": "phone",
+						"value": "732 901 4412"
+					},
+					{
+						"id": "pair_4ca179da47834ba09598dff9502f9fbb",
+						"name": "email",
+						"value": "estherpernikoff1@yahoo.com"
+					},
+					{
+						"disabled": false,
+						"id": "pair_32b1038e63f54bc98c73c7a2cc88e094",
+						"name": "user",
+						"value": "1"
+					}
+				]
+			},
+			"created": 1541105372694,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_10e781d2fd2a4bbaba1844781eb82f3c",
+					"name": "Content-Type",
+					"value": "multipart/form-data"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1541000708783,
+			"method": "POST",
+			"modified": 1541105372694,
+			"name": "Create Patient",
+			"parameters": [],
+			"parentId": "fld_f89814723f4a4564b8ddce69695cb54e",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:8000/patient/",
+			"_type": "request"
+		},
+		{
+			"_id": "req_f3932f6acf76423b9603beb512dedc9b",
+			"authentication": {
+				"prefix": "Token",
+				"token": "badb10dbf58631b27054febc09c957c959421123",
+				"type": "bearer"
+			},
+			"body": {
+				"mimeType": "multipart/form-data",
+				"params": []
+			},
+			"created": 1541105372697,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_3d6bf98b7cf543339fa8eea09edb8c6d",
+					"name": "Content-Type",
+					"value": "multipart/form-data"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540998311435.5,
+			"method": "DELETE",
+			"modified": 1541105372697,
+			"name": "Delete Patient",
+			"parameters": [],
+			"parentId": "fld_f89814723f4a4564b8ddce69695cb54e",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:8000/patient/3",
+			"_type": "request"
+		},
+		{
+			"_id": "req_036634d9335f4e388a5f01292197fffa",
+			"authentication": {
+				"prefix": "Token",
+				"token": "badb10dbf58631b27054febc09c957c959421123",
+				"type": "bearer"
+			},
+			"body": {},
+			"created": 1541105372700,
+			"description": "",
+			"headers": [],
+			"isPrivate": false,
+			"metaSortKey": -1540995806169,
+			"method": "GET",
+			"modified": 1541105372700,
+			"name": "Get Patients",
+			"parameters": [],
+			"parentId": "fld_f89814723f4a4564b8ddce69695cb54e",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:8000/patient",
+			"_type": "request"
+		},
+		{
+			"_id": "req_70adafad75c444e7ae3ff88478f4790e",
+			"authentication": {
+				"prefix": "Token",
+				"token": "badb10dbf58631b27054febc09c957c959421123",
+				"type": "bearer"
+			},
+			"body": {
+				"mimeType": "application/x-www-form-urlencoded",
+				"params": [
+					{
+						"id": "pair_ee3670ff1644433986da518b92e72948",
+						"name": "",
+						"value": ""
+					}
+				]
+			},
+			"created": 1541105372704,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_39a6ebefb9cc46dbb9e10261b6946df8",
+					"name": "Content-Type",
+					"value": "application/x-www-form-urlencoded"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540995508427,
+			"method": "GET",
+			"modified": 1541105372704,
+			"name": "Get Patient",
+			"parameters": [
+				{
+					"id": "pair_6cea5f37513a465398a13fc3fbb66482",
+					"name": "",
+					"value": ""
+				}
+			],
+			"parentId": "fld_f89814723f4a4564b8ddce69695cb54e",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:8000/patient/2",
+			"_type": "request"
+		},
+		{
+			"_id": "req_5297fbf4189d4e71a739f4bebba8cf35",
+			"authentication": {
+				"prefix": "Token",
+				"token": "badb10dbf58631b27054febc09c957c959421123",
+				"type": "bearer"
+			},
+			"body": {
+				"mimeType": "application/x-www-form-urlencoded",
+				"params": [
+					{
+						"id": "pair_774774c5a15c4fcfa5340b0b13e12296",
+						"name": "first_name",
+						"value": "Ben"
+					},
+					{
+						"id": "pair_4d4e2e461a244e43b8b32c6fcfcfc4cf",
+						"name": "last_name",
+						"value": "Pernikoff"
+					},
+					{
+						"id": "pair_07f8d3a608fe4094bc1d215781aac4c6",
+						"name": "phone",
+						"value": "732 901 4412"
+					},
+					{
+						"id": "pair_a38facb262e64e25a77eaa22e18eca63",
+						"name": "email",
+						"value": "benzyp@yahoo.com"
+					},
+					{
+						"id": "pair_cea6c14f23c8443dbc50a997655c29a6",
+						"name": "user",
+						"value": "1"
+					}
+				]
+			},
+			"created": 1541105372708,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_29ee418900fe4a54a00d4db5b4f75e79",
+					"name": "Content-Type",
+					"value": "application/x-www-form-urlencoded"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540961383439.5,
+			"method": "PUT",
+			"modified": 1541105372708,
+			"name": "Update Patient",
+			"parameters": [],
+			"parentId": "fld_f89814723f4a4564b8ddce69695cb54e",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:8000/patient/2/",
+			"_type": "request"
+		},
+		{
+			"_id": "req_b3af3e3a29b74be5b12a682b8a18dd97",
+			"authentication": {
+				"prefix": "Token",
+				"token": "badb10dbf58631b27054febc09c957c959421123",
+				"type": "bearer"
+			},
+			"body": {},
+			"created": 1541105372712,
+			"description": "",
+			"headers": [],
+			"isPrivate": false,
+			"metaSortKey": -1541101559422,
+			"method": "GET",
+			"modified": 1541105372712,
+			"name": "Get User",
+			"parameters": [],
+			"parentId": "fld_f89814723f4a4564b8ddce69695cb54e",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:8000/user/admin",
+			"_type": "request"
+		}
+	]
+}
