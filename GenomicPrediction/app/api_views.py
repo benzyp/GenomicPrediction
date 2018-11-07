@@ -25,6 +25,11 @@ from django.core.mail import send_mail
 from django.template import Context
 from django.template.loader import render_to_string
 
+from rq import Queue
+from redis import Redis
+
+import django_rq
+
 #This mixin will save the data prior to delsting it so that it can be returned upon delete
 class DestroyWithPayloadMixin(object):
      def destroy(self, *args, **kwargs):
@@ -124,15 +129,21 @@ def mail_report(request,pk):
     data = dict({'embryos':embryos,'patient':patient})
     html_content = render_to_string('app/email.html', data)
     try:
-        send_mail(
-            'Your embryo report from Genomic Prediction',
-            html_content,#TO DO - replace with plain text results - this is currently using the html formatted content
-            'benzyp@yahoo.com',
-            [patient.email],
-            fail_silently=False,
-            html_message=html_content
-        )
+        # Tell RQ what Redis connection to use
+        #redis_conn = Redis('redis','6379')
+        #q = Queue('low', connection=redis_conn)
+        #q.enqueue_call(func=queue_email,args=('benzyp@yahoo.com',patient.email,html_content),)
+        queue = django_rq.get_queue('low')
+        queue.enqueue(queue_email, 'benzyp@yahoo.com', [patient.email], html_content)
         return Response({'response':'email sent'}, status=status.HTTP_201_CREATED)
-    except Exception as e:
+    except Exception as e:	
         ex = e
-        return Response({'response':'message failed to send.'}, status=status.HTTP_400_BAD_REQUEST)
+        return Response({'response':'message failed to send.' + str(ex)}, status=status.HTTP_400_BAD_REQUEST)
+
+def queue_email(from_email,to_email,body):
+    send_mail('Your embryo report from Genomic Prediction',
+        body,#TO DO - replace with plain text results - this is currently using the html formatted content
+        from_email,
+        to_email,
+        fail_silently=False,
+        html_message=body)
