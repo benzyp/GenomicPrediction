@@ -17,13 +17,3 @@ class BootstrapAuthenticationForm(AuthenticationForm):
                                widget=forms.PasswordInput({
                                    'class': 'form-control',
                                    'placeholder':'Password'}))
-
-class PatientForm(forms.ModelForm):
-    class Meta:
-        model = Patient
-        exclude = ('user','created_at','updated_at')
-
-class EmbryoForm(forms.ModelForm):
-    class Meta:
-        model = Embryo
-        exclude = ('user','created_at','updated_at')
